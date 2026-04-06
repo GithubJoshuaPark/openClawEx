@@ -3,180 +3,510 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenClaw Premium Guide | Mission Control</title>
+  <title>🦞 OpenClaw 설치 및 설정 가이드 — macOS Intel</title>
+  <meta name="description" content="macOS Intel CPU 환경에서 OpenClaw를 설치하고 Discord Bot을 연동하며 Gemini 2.5 Flash 모델로 AI 에이전트를 운영하는 완전 가이드">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fira+Code:wght@400;500&display=swap">
 </head>
 <body>
-  <div class="container">
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar">
-      <div class="logo-section">
-        <span style="font-size: 1.8rem;">🦞</span> OpenClawEx
-      </div>
-      <nav>
-        <ul class="nav-list">
-          <li class="nav-item"><a href="#intro" class="nav-link active">1. OpenClaw란?</a></li>
-          <li class="nav-item"><a href="#prep" class="nav-link">2. Node.js 확인</a></li>
-          <li class="nav-item"><a href="#install" class="nav-link">3. 설치 가이드</a></li>
-          <li class="nav-item"><a href="#onboard" class="nav-link">4. 초기 설정 (Onboard)</a></li>
-          <li class="nav-item"><a href="#discord" class="nav-link">5. Discord 연동</a></li>
-          <li class="nav-item"><a href="#search" class="nav-link">6. 웹 검색 설정</a></li>
-          <li class="nav-item"><a href="#skills" class="nav-link">7. 스킬 설정</a></li>
-          <li class="nav-item"><a href="#gateway" class="nav-link">8. Gateway vs Terminal</a></li>
-          <li class="nav-item"><a href="#permissions" class="nav-link">9. Discord 권한</a></li>
-          <li class="nav-item"><a href="#troubleshooting" class="nav-link">10. 트러블슈팅</a></li>
-          <li class="nav-item"><a href="#remote" class="nav-link">11. 원격 프로젝트 관리</a></li>
-          <li class="nav-item"><a href="#protocol" class="nav-link">12. Build-Before-Commit</a></li>
-          <li class="nav-item"><a href="#gemini404" class="nav-link">13. 404 모델 에러</a></li>
-          <li class="nav-item"><a href="#quickstart" class="nav-link">14. 맥북 빠른 시작</a></li>
-          <li class="nav-item"><a href="#status-guide" class="nav-link">15. Status 해석 가이드</a></li>
-        </ul>
-      </nav>
-    </aside>
+<div class="mesh-bg"></div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <header class="hero">
-        <div class="section-tag animate-in">Premium Guide</div>
-        <h1 class="animate-in">🦞 OpenClaw 설치 및 <br>설정 가이드</h1>
-        <p class="animate-in">macOS (Intel CPU) 환경에서 OpenClaw를 설치하고 지능적인 에이전트를 운영하는 마스터 가이드입니다.</p>
-      </header>
-
-      <!-- 1. OpenClaw란? -->
-      <section id="intro" class="section-card">
-        <div class="section-tag">Intro</div>
-        <h2>1. OpenClaw란?</h2>
-        <p>AI 에이전트를 운영할 수 있는 최적의 플랫폼입니다. Claude, OpenAI 등 최신 모델과 연동하여 자동화 작업을 수행합니다.</p>
-        <div class="important-box">
-          <ul>
-            <li>✨ AI 자동 메시지 및 작업 실행</li>
-            <li>💬 WhatsApp, Telegram, Discord 연동</li>
-            <li>🔍 웹 검색 및 실시간 정보 처리</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 2. 사전 준비 -->
-      <section id="prep" class="section-card">
-        <div class="section-tag">Step 01</div>
-        <h2>2. Node.js 버전 확인</h2>
-        <p>OpenClaw는 <strong>Node.js v22.14.0 이상</strong>이 필요합니다.</p>
-        <pre><button class="copy-btn">Copy</button><code># nvm으로 v24.7.0 권장 버전 활성화
-nvm use 24.7.0
-nvm alias default 24.7.0</code></pre>
-      </section>
-
-      <!-- 3. 설치 가이드 -->
-      <section id="install" class="section-card">
-        <div class="section-tag">Step 02</div>
-        <h2>3. OpenClaw 설치</h2>
-        <p>간단한 쉘 명령어로 패키지를 설치하고 초기화할 수 있습니다.</p>
-        <pre><button class="copy-btn">Copy</button><code># 설치 스크립트
-curl -fsSL https://openclaw.ai/install.sh | bash
-
-# 확인 및 설치 초기화
-openclaw --version
-openclaw setup</code></pre>
-      </section>
-
-      <!-- 4. Onboard -->
-      <section id="onboard" class="section-card">
-        <div class="section-tag">Step 03</div>
-        <h2>4. 초기 설정 (Onboard)</h2>
-        <p>대화형 모드를 통해 AI 모델과 API 키를 설정합니다.</p>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr><th>단계</th><th>항목</th><th>권장 선택값</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>설정 모드</td><td>Setup mode</td><td><strong>QuickStart</strong></td></tr>
-              <tr><td>AI 제공자</td><td>Model provider</td><td><strong>Anthropic (Claude)</strong></td></tr>
-              <tr><td>기본 모델</td><td>Default model</td><td><strong>claude-sonnet-4-6</strong></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- 5. Discord -->
-      <section id="discord" class="section-card">
-        <div class="section-tag">Integration</div>
-        <h2>5. Discord Bot 연동</h2>
-        <h3>핵심 체크리스트</h3>
-        <p>Developer Portal에서 봇을 생성하고 <strong>Privileged Gateway Intents</strong> 3가지를 반드시 활성화해야 합니다.</p>
-        <div class="important-box">
-          ✅ PRESENCE INTENT | ✅ SERVER MEMBERS INTENT | ✅ MESSAGE CONTENT INTENT
-        </div>
-      </section>
-
-      <!-- 8. Gateway vs Terminal -->
-      <section id="gateway" class="section-card">
-        <div class="section-tag">Operation Mode</div>
-        <h2>8. 에이전트 실행 모드</h2>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr><th>항목</th><th>Gateway (Discord)</th><th>Terminal (TUI)</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>실행 방식</td><td>백그라운드 데몬</td><td>포그라운드 1:1</td></tr>
-              <tr><td>특징</td><td>모바일 알림 지원</td><td>파일 시스템 직접 접근</td></tr>
-              <tr><td>종료시</td><td>계속 작동</td><td>세션 종료</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- 10. Troubleshooting -->
-      <section id="troubleshooting" class="section-card">
-        <div class="section-tag">Troubleshooting</div>
-        <h2>10. 트러블슈팅 가이드</h2>
-        
-        <h3>🔴 Node.js 버전 오류</h3>
-        <p>시스템 심볼릭 링크를 nvm 경로로 수정하여 해결합니다.</p>
-        <pre><button class="copy-btn">Copy</button><code>sudo ln -sf ~/.nvm/versions/node/v24.7.0/bin/node /usr/local/bin/node</code></pre>
-
-        <h3>🔴 WebSocket 4014 에러</h3>
-        <p>Discord Intents 권한 미설정 시 발생합니다. Developer Portal에서 3가지 옵션을 활성화하세요.</p>
-      </section>
-
-      <!-- 14. QuickStart (맥북 재부팅) -->
-      <section id="quickstart" class="section-card">
-        <div class="section-tag">Daily Routine</div>
-        <h2>14. 맥북 재부팅 후 빠른 시작</h2>
-        <p>매번 입력하는 것이 번거롭다면 <code>~/.zshrc</code>에 별칭(Alias)을 등록하세요.</p>
-        <pre><button class="copy-btn">Copy</button><code># ~/.zshrc Alias 추천
-alias claw='source ~/.nvm/nvm.sh && nvm use 24.7.0 && openclaw gateway start'
-alias clawchat='source ~/.nvm/nvm.sh && nvm use 24.7.0 && openclaw'</code></pre>
-      </section>
-
-      <!-- 15. Status Guide -->
-      <section id="status-guide" class="section-card">
-        <div class="section-tag">Monitoring</div>
-        <h2>15. Gateway Status 해석 가이드</h2>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr><th>항목</th><th>의미</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><code>RPC probe: ok</code></td><td>내부 통신 정상 상태</td></tr>
-              <tr><td><code>running (state active)</code></td><td>데몬이 활성화되어 원격 대기 중</td></tr>
-              <tr><td><code>loopback (127.0.0.1)</code></td><td>로컬 보안 통신 모드</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <footer>
-        <p style="text-align: center; margin-top: 4rem;">
-          © 2026 OpenClaw Premium Experience. Crafted with ❤️ for Gemini Advanced Coding.
-        </p>
-      </footer>
-    </main>
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo"><span>🦞</span> OpenClaw Guide</div>
+    <div class="nav-links">
+      <a href="#about">소개</a>
+      <a href="#install">설치</a>
+      <a href="#discord">Discord</a>
+      <a href="#modes">실행 모드</a>
+      <a href="#status">현재 상태</a>
+      <a href="#troubleshoot">트러블슈팅</a>
+      <a href="#quickstart">빠른 시작</a>
+    </div>
+    <button class="nav-toggle" aria-label="메뉴"><span></span><span></span><span></span></button>
   </div>
+</nav>
 
-  <script src="script.js"></script>
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><div class="dot"></div>OpenClaw 2026.4.2 · Gateway Running</div>
+    <h1>AI 에이전트 플랫폼<br><span class="gradient">OpenClaw</span> 완전 가이드</h1>
+    <p>macOS Intel에서 설치, Discord Bot 연동, Gemini 2.5 Flash로 모델 전환까지 — 실전 기록 기반 원스톱 가이드</p>
+    <a href="#install" class="hero-cta">🚀 설치 시작하기</a>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="value">v2026.4.2</div><div class="label">OpenClaw</div></div>
+      <div class="hero-stat"><div class="value">Gemini 2.5</div><div class="label">기본 모델</div></div>
+      <div class="hero-stat"><div class="value">Discord</div><div class="label">채널 연동</div></div>
+      <div class="hero-stat"><div class="value">Node 24.7</div><div class="label">런타임</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Introduction</div>
+      <h2 class="section-title">OpenClaw란?</h2>
+      <p class="section-desc">AI 에이전트를 운영·관리할 수 있는 오픈소스 플랫폼</p>
+    </div>
+    <div class="grid-2 animate">
+      <div class="glass-card">
+        <div class="feature-icon">💬</div>
+        <div class="feature-title">멀티 채널 연동</div>
+        <div class="feature-desc">Discord, WhatsApp, Telegram 등 다양한 채팅 채널과 실시간 연동. 모바일에서도 AI와 대화 가능.</div>
+      </div>
+      <div class="glass-card">
+        <div class="feature-icon">🤖</div>
+        <div class="feature-title">다중 AI 모델</div>
+        <div class="feature-desc">Google Gemini, Anthropic Claude, OpenAI 등 다양한 모델 지원. 현재 <strong>Gemini 2.5 Flash</strong>를 기본 모델로 사용 중.</div>
+      </div>
+      <div class="glass-card">
+        <div class="feature-icon">🛠️</div>
+        <div class="feature-title">스킬 & 자동화</div>
+        <div class="feature-desc">웹 검색, 코드 실행, 파일 관리 등 10개 기본 스킬 + Notion, Whisper 등 확장 스킬 지원.</div>
+      </div>
+      <div class="glass-card">
+        <div class="feature-icon">📱</div>
+        <div class="feature-title">원격 프로젝트 관리</div>
+        <div class="feature-desc">맥북이 켜져 있으면 iPhone Discord에서 fieldMates, seoultrip 등 로컬 프로젝트를 원격 제어.</div>
+      </div>
+    </div>
+    <!-- Flow Diagram -->
+    <div class="glass-card animate" style="margin-top:32px; text-align:center;">
+      <div class="feature-title" style="margin-bottom:16px;">메시지 처리 흐름</div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font-size:0.88rem;font-weight:500;">
+        <span class="tag blue">나 (Discord)</span> → <span class="tag green">OpenClaw Bot</span> → <span class="tag blue">Gemini 2.5 Flash</span> → <span class="tag green">답변 생성</span> → <span class="tag blue">Discord 채널</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INSTALL ═══ -->
+<section id="install" style="background:rgba(11,121,208,0.02);">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Installation</div>
+      <h2 class="section-title">설치 및 초기 설정</h2>
+      <p class="section-desc">Node.js 설치부터 onboard 완료까지</p>
+    </div>
+
+    <div class="glass-card animate">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-title">Node.js 버전 확인 (v22.14+ 필수)</div>
+            <div class="step-desc">nvm으로 v24.7.0 사용 권장</div>
+            <div class="code-block" style="margin-top:12px;">
+              <button class="code-copy">Copy</button>
+              <code><span class="comment"># 현재 버전 확인</span>
+<span class="cmd">node</span> <span class="flag">-v</span>
+
+<span class="comment"># nvm으로 전환</span>
+<span class="cmd">nvm</span> use <span class="string">24.7.0</span>
+<span class="cmd">nvm</span> alias default <span class="string">24.7.0</span></code>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-title">OpenClaw 설치</div>
+            <div class="code-block" style="margin-top:12px;">
+              <button class="code-copy">Copy</button>
+              <code><span class="cmd">curl</span> <span class="flag">-fsSL</span> https://openclaw.ai/install.sh | <span class="cmd">bash</span>
+<span class="cmd">openclaw</span> <span class="flag">--version</span>
+<span class="comment"># 🦞 OpenClaw 2026.4.2 (d74a122)</span></code>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-title">초기 설정 (onboard)</div>
+            <div class="code-block" style="margin-top:12px;">
+              <button class="code-copy">Copy</button>
+              <code><span class="cmd">openclaw</span> onboard</code>
+            </div>
+            <div style="overflow-x:auto;margin-top:16px;">
+              <table class="compare-table">
+                <tr><th>단계</th><th>선택 항목</th><th>선택값</th></tr>
+                <tr><td>AI 제공자</td><td>Model provider</td><td><strong>Google (Gemini)</strong></td></tr>
+                <tr><td>기본 모델</td><td>Default model</td><td><strong>gemini-2.5-flash</strong></td></tr>
+                <tr><td>보조 모델</td><td>Secondary</td><td>anthropic/claude-sonnet-4-6</td></tr>
+                <tr><td>검색 엔진</td><td>Search provider</td><td>DuckDuckGo (무료)</td></tr>
+              </table>
+            </div>
+            <div class="alert warn" style="margin-top:12px;">⚠️ API 키는 절대 외부에 공유하지 마세요!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-card animate" style="margin-top:24px;">
+      <div class="feature-title" style="margin-bottom:20px;">📂 생성되는 파일 구조</div>
+      <div class="file-tree">
+        <div class="tree-item folder-root"><span class="tree-icon">📁</span> <span class="tree-name">~/.openclaw/</span> <span class="tree-comment"># 루트 설정 디렉토리</span></div>
+        <div class="tree-branch">
+          <div class="tree-item"><span class="tree-icon">📄</span> <span class="tree-name">openclaw.json</span> <span class="tree-comment"># 메인 설정 (채널, 모델)</span></div>
+          <div class="tree-item"><span class="tree-icon">📁</span> <span class="tree-name">workspace/</span> <span class="tree-comment"># 에이전트 지식 및 규칙</span></div>
+          <div class="tree-branch">
+            <div class="tree-item"><span class="tree-icon">📝</span> <span class="tree-name">AGENT.md</span> <span class="tree-comment"># 행동 가이드라인</span></div>
+            <div class="tree-item"><span class="tree-icon">📝</span> <span class="tree-name">USER.md</span> <span class="tree-comment"># 사용자 프로필</span></div>
+            <div class="tree-item"><span class="tree-icon">📝</span> <span class="tree-name">SOUL.md</span> <span class="tree-comment"># 에이전트 성격 및 원칙</span></div>
+            <div class="tree-item"><span class="tree-icon">📝</span> <span class="tree-name">MEMORY.md</span> <span class="tree-comment"># 장기 기억 데이터</span></div>
+          </div>
+          <div class="tree-item"><span class="tree-icon">📁</span> <span class="tree-name">agents/main/sessions/</span> <span class="tree-comment"># 대화 세션 로그</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DISCORD ═══ -->
+<section id="discord">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Channel</div>
+      <h2 class="section-title">Discord Bot 연동</h2>
+      <p class="section-desc">Discord Developer Portal에서 봇을 만들고 OpenClaw에 연결</p>
+    </div>
+
+    <div class="accordion animate">
+      <div class="accordion-item open">
+        <button class="accordion-header">
+          <span class="step-num" style="width:32px;height:32px;font-size:0.78rem;">1</span>
+          Bot 생성 및 토큰 발급
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-body">
+          <ol style="padding-left:20px;margin-bottom:12px;">
+            <li><a href="https://discord.com/developers/applications" target="_blank">Discord Developer Portal</a> 접속</li>
+            <li><strong>"New Application"</strong> → 이름 입력 (예: OpenClaw Bot)</li>
+            <li>좌측 <strong>"Bot"</strong> → <strong>"Reset Token"</strong> → 토큰 복사</li>
+          </ol>
+          <div class="alert danger">🔐 토큰은 한 번만 표시됩니다! 안전하게 보관하세요.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span class="step-num" style="width:32px;height:32px;font-size:0.78rem;">2</span>
+          Privileged Gateway Intents 활성화 ⚠️ 필수
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-body">
+          <p style="margin-bottom:12px;">Bot 페이지 하단 <strong>"Privileged Gateway Intents"</strong>에서 <strong>3가지 모두</strong> 활성화:</p>
+          <ul style="margin-bottom:12px;">
+            <li>✅ PRESENCE INTENT</li>
+            <li>✅ SERVER MEMBERS INTENT</li>
+            <li>✅ MESSAGE CONTENT INTENT</li>
+          </ul>
+          <div class="alert danger">❌ 미설정 시 <strong>에러 4014</strong> 발생 — 봇이 메시지를 읽지 못합니다.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span class="step-num" style="width:32px;height:32px;font-size:0.78rem;">3</span>
+          서버 초대 및 채널 설정
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-body">
+          <p style="margin-bottom:8px;"><strong>채널 ID 복사:</strong> Discord 앱 → 설정 → 고급 → 개발자 모드 ON → 채널 우클릭 → 채널 ID 복사</p>
+          <p style="margin-bottom:12px;"><strong>서버 초대:</strong> OAuth2 → URL Generator → scope: <code>bot</code> 선택 → 생성된 URL로 초대</p>
+          <table class="compare-table" style="margin-top:12px;">
+            <tr><th>권한 종류</th><th>항목</th></tr>
+            <tr><td>일반 권한</td><td>채널 보기</td></tr>
+            <tr><td>채팅 권한</td><td>메시지 보내기, 기록 보기, 읽기</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODES ═══ -->
+<section id="modes" style="background:rgba(11,121,208,0.02);">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Execution</div>
+      <h2 class="section-title">Gateway vs Terminal 모드</h2>
+      <p class="section-desc">두 가지 실행 모드를 상황에 맞게 사용하세요</p>
+    </div>
+
+    <div class="grid-2 animate">
+      <div class="glass-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <div class="feature-icon">🌐</div>
+          <div>
+            <div class="feature-title">Gateway 모드</div>
+            <span class="tag green">백그라운드</span>
+          </div>
+        </div>
+        <div class="code-block" style="margin-bottom:16px;">
+          <code><span class="cmd">openclaw</span> gateway start</code>
+        </div>
+        <ul style="font-size:0.88rem;color:var(--text-secondary);padding-left:20px;line-height:2;">
+          <li>터미널 닫아도 <strong>계속 동작</strong></li>
+          <li>Discord에서 <code>@Bot</code> 멘션으로 대화</li>
+          <li>모바일 푸시 알림 수신</li>
+          <li>봇이 먼저 연락 가능</li>
+          <li>대시보드: <code>localhost:18789</code></li>
+        </ul>
+      </div>
+      <div class="glass-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <div class="feature-icon">⌨️</div>
+          <div>
+            <div class="feature-title">Terminal 모드</div>
+            <span class="tag blue">포그라운드</span>
+          </div>
+        </div>
+        <div class="code-block" style="margin-bottom:16px;">
+          <code><span class="cmd">openclaw</span></code>
+        </div>
+        <ul style="font-size:0.88rem;color:var(--text-secondary);padding-left:20px;line-height:2;">
+          <li>터미널 닫으면 <strong>세션 종료</strong></li>
+          <li>Discord 없이 바로 대화</li>
+          <li>파일 시스템 직접 접근</li>
+          <li>코드 수정 / git 작업 즉시</li>
+          <li>1회성 질문에 적합</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="glass-card animate" style="margin-top:24px; overflow-x:auto;">
+      <table class="compare-table">
+        <tr><th>항목</th><th>Gateway</th><th>Terminal</th></tr>
+        <tr><td>실행 방식</td><td>백그라운드 데몬</td><td>포그라운드 대화형</td></tr>
+        <tr><td>터미널 닫으면?</td><td><strong>계속 동작</strong></td><td><strong>세션 종료</strong></td></tr>
+        <tr><td>모바일 사용</td><td>✅</td><td>❌</td></tr>
+        <tr><td>푸시 알림</td><td>✅</td><td>❌</td></tr>
+        <tr><td>봇 선제 연락</td><td>✅</td><td>❌</td></tr>
+        <tr><td>로컬 파일 접근</td><td>✅</td><td>✅</td></tr>
+      </table>
+      <div class="alert info" style="margin-top:16px;margin-bottom:0;">💡 <strong>둘은 동시에 실행 가능합니다.</strong> Gateway로 Discord 봇을 띄워놓고 Terminal로 별도 작업해도 충돌 없습니다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CURRENT STATUS ═══ -->
+<section id="status">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Live Status</div>
+      <h2 class="section-title">현재 시스템 상태</h2>
+      <p class="section-desc"><code>openclaw status</code> 및 <code>openclaw models list</code> 실제 출력 기반</p>
+    </div>
+
+    <div class="status-banner animate">
+      <div class="status-item">
+        <div class="status-label">Gateway</div>
+        <div class="status-value"><span class="status-dot"></span> Running (pid 28920)</div>
+      </div>
+      <div class="status-item">
+        <div class="status-label">Discord</div>
+        <div class="status-value"><span class="status-dot"></span> ON · OK</div>
+      </div>
+      <div class="status-item">
+        <div class="status-label">기본 모델</div>
+        <div class="status-value">gemini-2.5-flash</div>
+      </div>
+      <div class="status-item">
+        <div class="status-label">보조 모델</div>
+        <div class="status-value">claude-sonnet-4-6</div>
+      </div>
+      <div class="status-item">
+        <div class="status-label">OS</div>
+        <div class="status-value">macOS 26.3.1 (x64)</div>
+      </div>
+      <div class="status-item">
+        <div class="status-label">Node</div>
+        <div class="status-value">v24.7.0</div>
+      </div>
+    </div>
+
+    <div class="grid-2 animate" style="margin-top:24px;">
+      <div class="glass-card">
+        <div class="feature-title" style="margin-bottom:12px;">🔧 등록된 모델</div>
+        <table class="compare-table">
+          <tr><th>모델</th><th>입력</th><th>태그</th></tr>
+          <tr><td><code>google/gemini-2.5-flash</code></td><td>text+image</td><td><span class="tag green">default</span></td></tr>
+          <tr><td><code>anthropic/claude-sonnet-4-6</code></td><td>text+image</td><td><span class="tag amber">alias:sonnet</span></td></tr>
+        </table>
+      </div>
+      <div class="glass-card">
+        <div class="feature-title" style="margin-bottom:12px;">📊 세션 정보</div>
+        <table class="compare-table">
+          <tr><th>세션</th><th>모델</th><th>토큰</th></tr>
+          <tr><td>Discord direct</td><td>gemini-2.5-flash</td><td>18k / 1049k (2%)</td></tr>
+          <tr><td>Main TUI</td><td>gemini-2.5-flash</td><td>—</td></tr>
+        </table>
+        <div class="alert info" style="margin-top:12px;margin-bottom:0;">Anthropic 토큰 비용 과다로 <strong>Gemini 2.5 Flash</strong>(무료 티어)로 기본 모델 전환 완료.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TROUBLESHOOT ═══ -->
+<section id="troubleshoot" style="background:rgba(11,121,208,0.02);">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Troubleshooting</div>
+      <h2 class="section-title">트러블슈팅</h2>
+      <p class="section-desc">실전에서 겪은 에러와 해결법</p>
+    </div>
+
+    <div class="accordion animate">
+      <div class="accordion-item">
+        <button class="accordion-header">🔴 Node.js 버전 오류 — <code>requires Node >=22.14.0</code><span class="accordion-icon">▼</span></button>
+        <div class="accordion-body">
+          <p><strong>원인:</strong> <code>/usr/local/bin/node</code>가 옛 버전을 가리킴</p>
+          <div class="code-block" style="margin-top:12px;">
+            <button class="code-copy">Copy</button>
+            <code><span class="cmd">nvm</span> use <span class="string">24.7.0</span>
+<span class="comment"># 또는 영구 수정:</span>
+<span class="cmd">sudo</span> ln <span class="flag">-sf</span> ~/.nvm/versions/node/v24.7.0/bin/node /usr/local/bin/node</code>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">🔴 Gateway WebSocket 4014 에러<span class="accordion-icon">▼</span></button>
+        <div class="accordion-body">
+          <p><strong>원인:</strong> Discord Developer Portal에서 Privileged Gateway Intents 미활성화</p>
+          <p style="margin-top:8px;"><strong>해결:</strong> Bot → Privileged Gateway Intents → 3가지 모두 ✅ → Save Changes → <code>openclaw gateway restart</code></p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">🔴 Config Invalid — Unrecognized key<span class="accordion-icon">▼</span></button>
+        <div class="accordion-body">
+          <p><strong>원인:</strong> <code>openclaw.json</code>에 지원하지 않는 키 추가됨</p>
+          <div class="code-block" style="margin-top:12px;">
+            <button class="code-copy">Copy</button>
+            <code><span class="cmd">node</span> <span class="flag">-e</span> <span class="string">"
+const fs = require('fs');
+const p = process.env.HOME+'/.openclaw/openclaw.json';
+const c = JSON.parse(fs.readFileSync(p));
+delete c.channels.discord.defaultChannel;
+fs.writeFileSync(p, JSON.stringify(c,null,2));
+"</span>
+<span class="cmd">openclaw</span> gateway restart</code>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">🔴 nvm 경로 의존 경고<span class="accordion-icon">▼</span></button>
+        <div class="accordion-body">
+          <p><strong>원인:</strong> LaunchAgent가 nvm 경로를 직접 참조, 업그레이드 시 깨질 수 있음</p>
+          <div class="code-block" style="margin-top:12px;">
+            <button class="code-copy">Copy</button>
+            <code><span class="cmd">openclaw</span> doctor <span class="flag">--repair</span></code>
+          </div>
+          <div class="alert success" style="margin-top:8px;">nvm 의존 없이 안정적인 경로로 LaunchAgent를 재설정합니다.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">🔴 404 모델 에러 (Gemini 버전 지원 중단)<span class="accordion-icon">▼</span></button>
+        <div class="accordion-body">
+          <p><strong>원인:</strong> <code>gemini-1.5-flash</code> 등 구 버전 모델 Deprecation</p>
+          <div class="code-block" style="margin-top:12px;">
+            <button class="code-copy">Copy</button>
+            <code><span class="comment"># openclaw.json에서 모델 업데이트</span>
+{
+  <span class="string">"primaryModel"</span>: <span class="string">"google/gemini-2.5-flash"</span>,
+  <span class="string">"activeModel"</span>: <span class="string">"google/gemini-2.5-flash"</span>
+}</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUICKSTART ═══ -->
+<section id="quickstart">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-tag">Quick Start</div>
+      <h2 class="section-title">맥북 재부팅 후 빠른 시작</h2>
+      <p class="section-desc">매번 입력할 필요 없이 Alias로 한 번에!</p>
+    </div>
+
+    <div class="grid-2 animate">
+      <div class="glass-card">
+        <div class="feature-title" style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+          <span>⌨️</span> 수동 시작
+        </div>
+        <div class="code-block">
+          <button class="code-copy">Copy</button>
+          <code><span class="comment"># 1. nvm 활성화</span>
+<span class="cmd">source</span> ~/.nvm/nvm.sh
+<span class="comment"># 2. Node.js 전환</span>
+<span class="cmd">nvm</span> use <span class="string">24.7.0</span>
+<span class="comment"># 3. Gateway 시작</span>
+<span class="cmd">openclaw</span> gateway start</code>
+        </div>
+      </div>
+      <div class="glass-card" style="border: 2px solid rgba(11,121,208,0.2); background: rgba(11,121,208,0.02);">
+        <div class="feature-title" style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+          <span>💡</span> Pro Tip: Alias 설정
+          <span class="tag blue" style="margin-left:auto;">추천</span>
+        </div>
+        <div class="code-block">
+          <button class="code-copy">Copy</button>
+          <code><span class="comment"># ~/.zshrc 에 추가</span>
+<span class="cmd">alias</span> claw=<span class="string">'source ~/.nvm/nvm.sh && nvm use 24.7.0 && openclaw gateway start'</span>
+<span class="cmd">alias</span> clawchat=<span class="string">'source ~/.nvm/nvm.sh && nvm use 24.7.0 && openclaw'</span></code>
+        </div>
+        <div class="alert info" style="margin-top:16px; padding:12px; font-size:0.82rem;">
+          단축어 한 번으로 환경 설정과 실행을 동시에 처리합니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- Commands Reference -->
+    <div class="glass-card animate" style="margin-top:24px;">
+      <div class="feature-title" style="margin-bottom:4px;">📌 Command Cheat Sheet</div>
+      <p class="feature-desc">자주 사용하는 핵심 명령어 모음</p>
+      
+      <div class="grid-2" style="margin-top:20px; gap:40px;">
+        <div>
+          <div style="font-size:0.85rem; font-weight:700; color:var(--brand-blue); margin-bottom:12px; border-bottom:1px solid var(--border-light); padding-bottom:4px;">🚀 실행 및 제어</div>
+          <div class="cmd-group">
+            <div class="cmd-item"><span class="cmd-text">openclaw</span> <span class="cmd-desc">터미널 채팅 시작</span></div>
+            <div class="cmd-item"><span class="cmd-text">openclaw gateway start</span> <span class="cmd-desc">백그라운드 봇 가동</span></div>
+            <div class="cmd-item"><span class="cmd-text">openclaw gateway stop</span> <span class="cmd-desc">봇 종료</span></div>
+            <div class="cmd-item"><span class="cmd-text">openclaw gateway status</span> <span class="cmd-desc">상태 모니터링</span></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; font-weight:700; color:var(--brand-green); margin-bottom:12px; border-bottom:1px solid var(--border-light); padding-bottom:4px;">🛠️ 관리 및 진단</div>
+          <div class="cmd-group">
+            <div class="cmd-item"><span class="cmd-text">openclaw status</span> <span class="cmd-desc">연동 모델/채널 정보</span></div>
+            <div class="cmd-item"><span class="cmd-text">openclaw doctor --repair</span> <span class="cmd-desc">자동 문제 해결</span></div>
+            <div class="cmd-item"><span class="cmd-text">openclaw models list</span> <span class="cmd-desc">사용 가능 모델 목록</span></div>
+            <div class="cmd-item"><span class="cmd-text">openclaw dashboard</span> <span class="cmd-desc">GUI 대시보드 열기</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-links">
+    <a href="https://docs.openclaw.ai/cli" target="_blank">공식 문서</a>
+    <a href="https://console.anthropic.com" target="_blank">Anthropic Console</a>
+    <a href="https://discord.com/developers/applications" target="_blank">Discord Developer Portal</a>
+    <a href="https://console.cloud.google.com" target="_blank">Google Cloud Console</a>
+    <a href="https://aistudio.google.com" target="_blank">Google AI Studio</a>
+  </div>
+  <p>📝 작성일: 2026년 4월 · macOS Intel · Node.js v24.7.0 · OpenClaw 2026.4.2</p>
+  <p style="margin-top:8px;">🦞 OpenClaw와 함께 지능적이고 창의적인 개발 여정을 시작하세요!</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
