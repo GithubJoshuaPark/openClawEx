@@ -1,0 +1,17 @@
+{
+  "name": "OpenClaw Guide",
+  "short_name": "OpenClaw",
+  "description": "OpenClaw AI Agent Installation and Configuration Guide",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06090f",
+  "theme_color": "#0B79D0",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
