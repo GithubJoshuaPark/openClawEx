@@ -132,11 +132,13 @@
             </div>
             <div style="overflow-x:auto;margin-top:16px;">
               <table class="compare-table">
-                <tr><th>단계</th><th>선택 항목</th><th>선택값</th></tr>
-                <tr><td>AI 제공자</td><td>Model provider</td><td><strong>Google (Gemini)</strong></td></tr>
-                <tr><td>기본 모델</td><td>Default model</td><td><strong>gemini-2.5-flash</strong></td></tr>
-                <tr><td>보조 모델</td><td>Secondary</td><td>anthropic/claude-sonnet-4-6</td></tr>
-                <tr><td>검색 엔진</td><td>Search provider</td><td>DuckDuckGo (무료)</td></tr>
+                <thead><tr><th>단계</th><th>선택 항목</th><th>선택값</th></tr></thead>
+                <tbody>
+                  <tr><td data-label="단계">AI 제공자</td><td data-label="선택 항목">Model provider</td><td data-label="선택값"><strong>Google (Gemini)</strong></td></tr>
+                  <tr><td data-label="단계">기본 모델</td><td data-label="선택 항목">Default model</td><td data-label="선택값"><strong>gemini-2.5-flash</strong></td></tr>
+                  <tr><td data-label="단계">보조 모델</td><td data-label="선택 항목">Secondary</td><td data-label="선택값">anthropic/claude-sonnet-4-6</td></tr>
+                  <tr><td data-label="단계">검색 엔진</td><td data-label="선택 항목">Search provider</td><td data-label="선택값">DuckDuckGo (무료)</td></tr>
+                </tbody>
               </table>
             </div>
             <div class="alert warn" style="margin-top:12px;">⚠️ API 키는 절대 외부에 공유하지 마세요!</div>
@@ -216,9 +218,11 @@
           <p style="margin-bottom:8px;"><strong>채널 ID 복사:</strong> Discord 앱 → 설정 → 고급 → 개발자 모드 ON → 채널 우클릭 → 채널 ID 복사</p>
           <p style="margin-bottom:12px;"><strong>서버 초대:</strong> OAuth2 → URL Generator → scope: <code>bot</code> 선택 → 생성된 URL로 초대</p>
           <table class="compare-table" style="margin-top:12px;">
-            <tr><th>권한 종류</th><th>항목</th></tr>
-            <tr><td>일반 권한</td><td>채널 보기</td></tr>
-            <tr><td>채팅 권한</td><td>메시지 보내기, 기록 보기, 읽기</td></tr>
+            <thead><tr><th>권한 종류</th><th>항목</th></tr></thead>
+            <tbody>
+              <tr><td data-label="권한 종류">일반 권한</td><td data-label="항목">채널 보기</td></tr>
+              <tr><td data-label="권한 종류">채팅 권한</td><td data-label="항목">메시지 보내기, 기록 보기, 읽기</td></tr>
+            </tbody>
           </table>
         </div>
       </div>
@@ -278,13 +282,17 @@
 
     <div class="glass-card animate" style="margin-top:24px; overflow-x:auto;">
       <table class="compare-table">
-        <tr><th>항목</th><th>Gateway</th><th>Terminal</th></tr>
-        <tr><td>실행 방식</td><td>백그라운드 데몬</td><td>포그라운드 대화형</td></tr>
-        <tr><td>터미널 닫으면?</td><td><strong>계속 동작</strong></td><td><strong>세션 종료</strong></td></tr>
-        <tr><td>모바일 사용</td><td>✅</td><td>❌</td></tr>
-        <tr><td>푸시 알림</td><td>✅</td><td>❌</td></tr>
-        <tr><td>봇 선제 연락</td><td>✅</td><td>❌</td></tr>
-        <tr><td>로컬 파일 접근</td><td>✅</td><td>✅</td></tr>
+        <thead>
+          <tr><th>항목</th><th>Gateway</th><th>Terminal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="항목">실행 방식</td><td data-label="Gateway">백그라운드 데몬</td><td data-label="Terminal">포그라운드 대화형</td></tr>
+          <tr><td data-label="항목">터미널 닫으면?</td><td data-label="Gateway"><strong>계속 동작</strong></td><td data-label="Terminal"><strong>세션 종료</strong></td></tr>
+          <tr><td data-label="항목">모바일 사용</td><td data-label="Gateway">✅</td><td data-label="Terminal">❌</td></tr>
+          <tr><td data-label="항목">푸시 알림</td><td data-label="Gateway">✅</td><td data-label="Terminal">❌</td></tr>
+          <tr><td data-label="항목">봇 선제 연락</td><td data-label="Gateway">✅</td><td data-label="Terminal">❌</td></tr>
+          <tr><td data-label="항목">로컬 파일 접근</td><td data-label="Gateway">✅</td><td data-label="Terminal">✅</td></tr>
+        </tbody>
       </table>
       <div class="alert info" style="margin-top:16px;margin-bottom:0;">💡 <strong>둘은 동시에 실행 가능합니다.</strong> Gateway로 Discord 봇을 띄워놓고 Terminal로 별도 작업해도 충돌 없습니다.</div>
     </div>
@@ -331,17 +339,21 @@
       <div class="glass-card">
         <div class="feature-title" style="margin-bottom:12px;">🔧 등록된 모델</div>
         <table class="compare-table">
-          <tr><th>모델</th><th>입력</th><th>태그</th></tr>
-          <tr><td><code>google/gemini-2.5-flash</code></td><td>text+image</td><td><span class="tag green">default</span></td></tr>
-          <tr><td><code>anthropic/claude-sonnet-4-6</code></td><td>text+image</td><td><span class="tag amber">alias:sonnet</span></td></tr>
+          <thead><tr><th>모델</th><th>입력</th><th>태그</th></tr></thead>
+          <tbody>
+            <tr><td data-label="모델"><code>google/gemini-2.5-flash</code></td><td data-label="입력">text+image</td><td data-label="태그"><span class="tag green">default</span></td></tr>
+            <tr><td data-label="모델"><code>anthropic/claude-sonnet-4-6</code></td><td data-label="입력">text+image</td><td data-label="태그"><span class="tag amber">alias:sonnet</span></td></tr>
+          </tbody>
         </table>
       </div>
       <div class="glass-card">
         <div class="feature-title" style="margin-bottom:12px;">📊 세션 정보</div>
         <table class="compare-table">
-          <tr><th>세션</th><th>모델</th><th>토큰</th></tr>
-          <tr><td>Discord direct</td><td>gemini-2.5-flash</td><td>18k / 1049k (2%)</td></tr>
-          <tr><td>Main TUI</td><td>gemini-2.5-flash</td><td>—</td></tr>
+          <thead><tr><th>세션</th><th>모델</th><th>토큰</th></tr></thead>
+          <tbody>
+            <tr><td data-label="세션">Discord direct</td><td data-label="모델">gemini-2.5-flash</td><td data-label="토큰">18k / 1049k (2%)</td></tr>
+            <tr><td data-label="세션">Main TUI</td><td data-label="모델">gemini-2.5-flash</td><td data-label="토큰">—</td></tr>
+          </tbody>
         </table>
         <div class="alert info" style="margin-top:12px;margin-bottom:0;">Anthropic 토큰 비용 과다로 <strong>Gemini 2.5 Flash</strong>(무료 티어)로 기본 모델 전환 완료.</div>
       </div>
