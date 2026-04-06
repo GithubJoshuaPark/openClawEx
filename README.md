@@ -116,7 +116,7 @@ openclaw onboard
 | 기존값 유지    | Config handling       | **Use existing values**              |
 | AI 모델 제공자 | Model/auth provider   | **Anthropic (Claude)**               |
 | 인증 방식      | Anthropic auth method | **Anthropic API key**                |
-| API 키 입력    | Enter API key         | `sk-ant-api03-...` 입력              |
+| API 키 입력    | Enter API key         | `sk-ant-api03-xxxxxxxxxxxxxxxx` 입력              |
 | 기본 모델      | Default model         | **Keep current (claude-sonnet-4-6)** |
 
 > ⚠️ **보안 주의**: API 키는 절대 외부에 공유하지 마세요!
