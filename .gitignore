@@ -30,3 +30,17 @@ dist-ssr
 # 문서화 폴더
 docs/
 
+# Firebase
+.firebase*
+firebase*
+*-debug.log*
+
+# Secrets & Env
+.secrets
+.env*
+*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
