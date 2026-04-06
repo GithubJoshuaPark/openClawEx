@@ -116,7 +116,7 @@ openclaw onboard
 | 기존값 유지    | Config handling       | **Use existing values**              |
 | AI 모델 제공자 | Model/auth provider   | **Anthropic (Claude)**               |
 | 인증 방식      | Anthropic auth method | **Anthropic API key**                |
-| API 키 입력    | Enter API key         | `sk-ant-api03-xxxxxxxxxxxxxxxx` 입력              |
+| API 키 입력    | Enter API key         | `sk-ant-api03-xxxxxxxxxxxxxxxx` 입력 |
 | 기본 모델      | Default model         | **Keep current (claude-sonnet-4-6)** |
 
 > ⚠️ **보안 주의**: API 키는 절대 외부에 공유하지 마세요!
@@ -630,6 +630,38 @@ it can break after upgrades.
 ```
 
 → nvm 경로 의존 경고. `openclaw doctor --repair` 실행으로 해결.
+
+---
+
+## 17. 🛡️ OpenClaw 이중 방어막(Dual Shield) 구축
+
+OpenClaw의 서비스 안정성을 극대화하기 위해 **Gemini -> Claude**로 이어지는 고가용성 모델 Fallback 체인을 구축했습니다.
+
+### ⚙️ 시스템 아키텍처 및 설정
+
+1. **지능형 모델 Failover (`openclaw.json`)**
+   - **Primary**: `google/gemini-2.5-flash`
+   - **Fallback 1**: `anthropic/claude-sonnet-4-6`
+   - API 호출 장애나 Rate Limit 발생 시 지연 없이 다음 모델로 자동 전환됩니다.
+
+2. **보안 인증 통합 (`auth-profiles.json`)**
+   - 각 기능의 주요 모델 API 키를 시스템 내부 보안 저장소에 정식 등록했습니다.
+   - 별도의 수동 로그인 과정 없이 Fallback 상황에서 즉시 에이전트 구동이 가능합니다.
+
+3. **운영 안정성 검증**
+   - **Doctor Check**: 구성 파일 무결성 및 시스템 환경 검증 완료.
+   - **Gateway Status**: LaunchAgent 서비스 재가동 및 실시간 처리 확인.
+
+### 📊 실시간 상태 요약
+
+| 구성 요소            | 현재 상태       | 상세 설명                           |
+| :------------------- | :-------------- | :---------------------------------- |
+| **Primary Shield**   | 🟢 **ACTIVE**   | Gemini 2.5 Flash 기반 메인 에이전트 |
+| **Secondary Shield** | 🟢 **READY**    | Claude Sonnet 4.6 (Failover 1)      |
+| **Auth Profiles**    | ✅ **VERIFIED** | Gemini / Claude 인증 완료           |
+
+> [!TIP]
+> **Dynamic Resilience**: 네트워크 불안정이나 API 사용량 초과 시에도 OpenClaw가 지능적으로 최적의 모델을 선택하여 작업의 연속성을 유지합니다.
 
 ---
 
