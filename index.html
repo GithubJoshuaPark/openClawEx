@@ -473,12 +473,14 @@ fs.writeFileSync(p, JSON.stringify(c,null,2));
         </div>
         <div class="code-block">
           <button class="code-copy">Copy</button>
-          <code><span class="comment"># 1. nvm 활성화</span>
-<span class="cmd">source</span> ~/.nvm/nvm.sh
-<span class="comment"># 2. Node.js 전환</span>
-<span class="cmd">nvm</span> use <span class="string">24.7.0</span>
-<span class="comment"># 3. Gateway 시작</span>
-<span class="cmd">openclaw</span> gateway start</code>
+          <code>
+            <span class="comment"># 1. nvm 활성화</span><br>
+            <span class="cmd">source</span> ~/.nvm/nvm.sh<br>
+            <span class="comment"># 2. Node.js 전환</span><br>
+            <span class="cmd">nvm</span> use <span class="string">24.7.0</span><br>
+            <span class="comment"># 3. Gateway 시작</span><br>
+            <span class="cmd">openclaw</span> gateway start
+          </code>
         </div>
       </div>
       <div class="glass-card" style="border: 2px solid rgba(11,121,208,0.2); background: rgba(11,121,208,0.02);">
@@ -488,9 +490,11 @@ fs.writeFileSync(p, JSON.stringify(c,null,2));
         </div>
         <div class="code-block">
           <button class="code-copy">Copy</button>
-          <code><span class="comment"># ~/.zshrc 에 추가</span>
-<span class="cmd">alias</span> claw=<span class="string">'source ~/.nvm/nvm.sh && nvm use 24.7.0 && openclaw gateway start'</span>
-<span class="cmd">alias</span> clawchat=<span class="string">'source ~/.nvm/nvm.sh && nvm use 24.7.0 && openclaw'</span></code>
+          <code>
+            <span class="comment"># ~/.zshrc 에 추가</span><br>
+            <span class="cmd">alias</span> claw=<span class="string">'source ~/.nvm/nvm.sh && nvm use 24.7.0 && openclaw gateway start'</span><br>
+            <span class="cmd">alias</span> clawchat=<span class="string">'source ~/.nvm/nvm.sh && nvm use 24.7.0 && openclaw'</span>
+          </code>
         </div>
         <div class="alert info" style="margin-top:16px; padding:12px; font-size:0.82rem;">
           단축어 한 번으로 환경 설정과 실행을 동시에 처리합니다.
