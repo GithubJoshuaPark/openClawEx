@@ -46,3 +46,6 @@ Thumbs.db
 
 Discord_OepnClawBot_Token.png
 
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
